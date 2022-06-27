@@ -62,6 +62,10 @@ public class DatabaseConfig {
         this.driverClassName = driverClassName;
     }
 
+    /**
+     * Creates a data source for the database.
+     * @return Data source for the database
+     */
     public DataSource getDataSource() {
         return DataSourceBuilder.create()
                 .url(this.url)

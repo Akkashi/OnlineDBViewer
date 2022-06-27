@@ -16,12 +16,19 @@ public class DBViewer {
 
     private final List<Country> countries = new ArrayList<>();
 
+    /**
+     * Creates a connection to the database.
+     * @param connection Connection to the database
+     */
     public DBViewer(Connection connection) {
         System.out.println("Connecting to database...");
         this.connection = connection;
         System.out.println("Connected to database.");
     }
 
+    /**
+     * Initializes the database.
+     */
     public void initDatabase() {
         System.out.println("Initializing database...");
         try {
@@ -45,6 +52,10 @@ public class DBViewer {
         System.out.println("Initialized database.");
     }
 
+    /**
+     * Disconnects from the database.
+     * (Not used)
+     */
     public void disconnect() {
         System.out.println("Disconnecting from database...");
         try {

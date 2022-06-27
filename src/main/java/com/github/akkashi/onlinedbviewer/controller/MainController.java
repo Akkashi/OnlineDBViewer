@@ -17,6 +17,11 @@ public class MainController {
 	@Autowired
 	private OnlineDbViewerApplication app;
 
+	/**
+	 * This method is called when the user requests the main page.
+	 * @param model The model that will be used to render the page.
+	 * @return The name of the view to render.
+	 */
 	@RequestMapping(value = {"/countries"}, method = RequestMethod.GET)
 	public String index(Model model) {
 		model.addAttribute("countries", this.app.getViewer().getCountries());

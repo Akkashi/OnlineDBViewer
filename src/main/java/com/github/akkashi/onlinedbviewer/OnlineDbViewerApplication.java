@@ -14,14 +14,28 @@ public class OnlineDbViewerApplication implements CommandLineRunner {
     @Autowired
     private DatabaseConfig databaseConfig;
 
+    /**
+     * This method is called when the application starts.
+     * @param args The command line arguments.
+     */
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(OnlineDbViewerApplication.class);
         app.run();
     }
+
+    /**
+     * Permits to get the DBViewer instance.
+     * @return The DBViewer instance.
+     */
     public DBViewer getViewer() {
         return this.viewer;
     }
 
+    /**
+     * This method is called after the application starts.
+     * @param args The command line arguments.
+     * @throws Exception If an error occurs.
+     */
     @Override
     public void run(String... args) throws Exception {
         this.viewer = new DBViewer(this.databaseConfig.getDataSource().getConnection());
