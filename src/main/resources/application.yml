@@ -1,0 +1,5 @@
+datasource:
+  url: jdbc:postgresql://localhost:5432/world
+  password: 63xyZ9=4LhZ!r2Fv
+  username: explorer
+  driverClassName: org.postgresql.Driver
