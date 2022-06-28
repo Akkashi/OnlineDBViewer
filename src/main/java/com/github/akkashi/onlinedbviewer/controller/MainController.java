@@ -22,7 +22,7 @@ public class MainController {
 	 * @param model The model that will be used to render the page.
 	 * @return The name of the view to render.
 	 */
-	@RequestMapping(value = {"/countries"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/countries")
 	public String index(Model model) {
 		model.addAttribute("countries", this.app.getViewer().getCountries());
 
