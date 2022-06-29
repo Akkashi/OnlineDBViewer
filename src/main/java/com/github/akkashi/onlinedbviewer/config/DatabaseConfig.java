@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
-import java.beans.BeanProperty;
 
 /**
  * Project: OnlineDBViewer

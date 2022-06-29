@@ -22,10 +22,10 @@ public class MainController {
 	 * @param model The model that will be used to render the page.
 	 * @return The name of the view to render.
 	 */
-	@RequestMapping(value = "/countries")
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {
 		model.addAttribute("countries", this.app.getViewer().getCountries());
 
-		return "countries";
+		return "index";
 	}
 }

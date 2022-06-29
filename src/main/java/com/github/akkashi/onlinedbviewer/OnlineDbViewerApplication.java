@@ -1,16 +1,21 @@
 package com.github.akkashi.onlinedbviewer;
 
 import com.github.akkashi.onlinedbviewer.config.DatabaseConfig;
+import com.github.akkashi.onlinedbviewer.controller.MainController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.sql.SQLException;
 
 @SpringBootApplication
-public class OnlineDbViewerApplication implements CommandLineRunner {
+public class OnlineDbViewerApplication extends SpringBootServletInitializer implements CommandLineRunner {
     private DBViewer viewer;
+
     @Autowired
     private DatabaseConfig databaseConfig;
 
@@ -21,6 +26,11 @@ public class OnlineDbViewerApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication app = new SpringApplication(OnlineDbViewerApplication.class);
         app.run();
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(OnlineDbViewerApplication.class);
     }
 
     /**
