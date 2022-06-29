@@ -49,6 +49,5 @@ public class OnlineDbViewerApplication extends SpringBootServletInitializer impl
     @Override
     public void run(String... args) throws Exception {
         this.viewer = new DBViewer(this.databaseConfig.getDataSource().getConnection());
-        this.viewer.initDatabase();
     }
 }

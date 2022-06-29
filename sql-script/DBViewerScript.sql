@@ -9,6 +9,9 @@ create DATABASE world;
 create user explorer with ENCRYPTED PASSWORD '63xyZ9=4LhZ!r2Fv';
 grant all privileges on DATABASE world to explorer;
 
+-- Selecting database world with user explorer
+\c world explorer;
+
 -- Creating a table "countries" in this database with fields: id, name and capital_city
 create TABLE "countries" (
     id SERIAL PRIMARY KEY,
